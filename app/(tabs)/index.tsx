@@ -1,9 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar";
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/Card";
@@ -14,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function HomeScreen() {
   return (
     <SafeAreaView className="flex-1 bg-background">
-      <View className="p-4 flex-1">
+      <View className="flex-1 bg-orange-100">
         <Card className="border-0 shadow-none">
           <CardHeader>
             <View className="flex-row justify-between items-center">
@@ -31,24 +29,13 @@ export default function HomeScreen() {
               </Avatar>
             </View>
             <CardDescription>
-              Here is your personalized mealplan.
+              Here is your personalized meal plan.
             </CardDescription>
           </CardHeader>
         </Card>
         <Separator />
-        <Text>Your Meal Plan</Text>
-
-        <View className="flex-row flex-wrap justify-between">
-          <View className="w-[48%] h-40 bg-secondary/10 rounded-lg p-4 mb-4">
-            <Text className="text-lg font-medium text-secondary">
-              Quick Action 1
-            </Text>
-          </View>
-          <View className="w-[48%] h-40 bg-accent/10 rounded-lg p-4 mb-4">
-            <Text className="text-lg font-medium text-accent">
-              Quick Action 2
-            </Text>
-          </View>
+        <View className="m-6">
+          <Text className="text-lg font-bold">Your Meal Plan</Text>
         </View>
       </View>
     </SafeAreaView>
