@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/Card";
+import { Separator } from "@/components/Separator";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -14,7 +15,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView className="flex-1 bg-background">
       <View className="p-4 flex-1">
-        <Card>
+        <Card className="border-0 shadow-none">
           <CardHeader>
           <View className="flex-row justify-between items-center">
             <CardTitle>Hi, Carol!</CardTitle>
@@ -33,20 +34,8 @@ export default function HomeScreen() {
               Here is your personalized mealplan.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Text className="text-foreground">
-              Card Content with Tailwind styling
-            </Text>
-          </CardContent>
-          <CardFooter className="bg-secondary/5 flex flex-row justify-between items-center">
-            <Text className="text-xs text-muted-foreground">
-              Last updated: June 2025
-            </Text>
-            <View className="px-3 py-1 bg-primary rounded">
-              <Text className="text-primary-foreground text-sm">Details</Text>
-            </View>
-          </CardFooter>
         </Card>
+            <Separator/>
 
         <View className="flex-row flex-wrap justify-between">
           <View className="w-[48%] h-40 bg-secondary/10 rounded-lg p-4 mb-4">
