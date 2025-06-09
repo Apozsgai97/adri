@@ -6,7 +6,7 @@ import {
 } from "@/components/Card";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image } from "expo-image";
-import { Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
 export function MealCard() {
   return (
@@ -25,7 +25,9 @@ export function MealCard() {
           <Text className="text-lg font-bold">Breakfast</Text>
         </CardDescription>
       </CardHeader>
-      <Ionicons name="heart-outline" size={24} />
+      <TouchableOpacity>
+        <Ionicons name="heart-outline" size={24} />
+      </TouchableOpacity>
     </Card>
   );
 }
