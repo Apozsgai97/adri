@@ -17,25 +17,26 @@ export default function HomeScreen() {
       <View className="p-4 flex-1">
         <Card className="border-0 shadow-none">
           <CardHeader>
-          <View className="flex-row justify-between items-center">
-            <CardTitle>Hi, Carol!</CardTitle>
-            <Avatar alt="Carol's Avatar">
-              <AvatarImage
-                source={{
-                  uri: "https://avatars.githubusercontent.com/u/145907820?v=4",
-                }}
-              />
-              <AvatarFallback>
-                <Text>CM</Text>
-              </AvatarFallback>
-            </Avatar>
-          </View>
+            <View className="flex-row justify-between items-center">
+              <CardTitle accessibilityRole="header">Hi, Carol!</CardTitle>
+              <Avatar alt="Carol's Avatar">
+                <AvatarImage
+                  source={{
+                    uri: "https://avatars.githubusercontent.com/u/145907820?v=4",
+                  }}
+                />
+                <AvatarFallback>
+                  <Text>CM</Text>
+                </AvatarFallback>
+              </Avatar>
+            </View>
             <CardDescription>
               Here is your personalized mealplan.
             </CardDescription>
           </CardHeader>
         </Card>
-            <Separator/>
+        <Separator />
+        <Text>Your Meal Plan</Text>
 
         <View className="flex-row flex-wrap justify-between">
           <View className="w-[48%] h-40 bg-secondary/10 rounded-lg p-4 mb-4">
