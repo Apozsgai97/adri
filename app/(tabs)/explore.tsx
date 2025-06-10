@@ -1,8 +1,10 @@
 import { Button } from "@/components/Button";
+import { useRouter } from "expo-router";
 import { ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoginScreen() {
+  const router = useRouter();
   return (
     <ImageBackground
       source={require("@/assets/images/login-img.png")}
@@ -26,7 +28,11 @@ export default function LoginScreen() {
           >
             <Text className="text-xl text-primary">Log in</Text>
           </Button>
-          <Button size={"lg"} className="rounded-full mt-4">
+          <Button
+            size={"lg"}
+            className="rounded-full mt-4"
+            onPress={() => router.push("/basic-info")}
+          >
             <Text className="text-xl text-background">Get started</Text>
           </Button>
         </View>
