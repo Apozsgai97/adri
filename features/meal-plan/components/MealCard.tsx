@@ -6,11 +6,15 @@ import {
 } from "@/components/Card";
 import { FavoriteButton } from "@/components/ui/favoriteButton";
 import { Image } from "expo-image";
+import { useState } from "react";
 import { Text } from "react-native";
 
 export function MealCard() {
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
-    <Card className="mb-4 gap-1 items-end pb-2 rounded-3xl border-0 shadow">
+    <Card className="mb-4 gap-1 items-end pb-2 rounded-3xl border-0 shadow-sm">
       <CardHeader className="items-center pb-0">
         <Image
           style={{ width: 130, height: 130 }}
@@ -25,7 +29,9 @@ export function MealCard() {
           <Text className="text-lg font-bold">Breakfast</Text>
         </CardDescription>
       </CardHeader>
-      <FavoriteButton />
+      <FavoriteButton isFavorite={isFavorite} onClick={()=>setIsFavorite((prev)=>!prev)}/>
     </Card>
   );
 }
+
+

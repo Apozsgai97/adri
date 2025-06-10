@@ -1,10 +1,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native";
 
-export function FavoriteButton() {
+type Props = {
+  isFavorite: boolean;
+  onClick: () => void;
+}
+
+export function FavoriteButton({isFavorite, onClick}: Props) {
   return (
-    <TouchableOpacity>
-      <Ionicons name="heart-outline" className="mr-2" size={24} />
+    <TouchableOpacity onPress={onClick}>
+      <Ionicons name={isFavorite ? "heart": "heart-outline"} className="mr-2" size={24} color={isFavorite ? "orange": "gray"}/>
     </TouchableOpacity>
   );
 }
