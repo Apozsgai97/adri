@@ -14,7 +14,7 @@ export function MealCard() {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
-    <Card className="mb-4 gap-1 items-end pb-2 rounded-3xl border-0 shadow-sm">
+    <Card className="mb-4 gap-1 items-end pb-2 rounded-3xl border-0 shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
       <CardHeader className="items-center pb-0">
         <Image
           style={{ width: 130, height: 130 }}
