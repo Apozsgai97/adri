@@ -12,11 +12,11 @@ export default function LoginScreen() {
       imageStyle={{ bottom: 370 }}
     >
       <SafeAreaView className="flex-1 justify-end">
-        <View className="bg-background py-14 px-4 rounded-t-3xl shadow">
+        <View className="bg-background pt-14 px-4 rounded-t-3xl">
           <Text className="text-4xl text-center font-semibold">
             Making Meal Planning Effortless and Enjoyable
           </Text>
-          <Text className="text-lg text-center my-4">
+          <Text className="text-lg text-center my-4 mb-10">
             Discover a world of delicious recipes, personalized meal plans, and
             nutritional insights. Join us in transforming your cooking
             experience!
