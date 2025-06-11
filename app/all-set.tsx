@@ -13,7 +13,9 @@ export default function LoginScreen() {
     >
       <SafeAreaView className="flex-1 justify-end">
         <View className="bg-background pt-20 px-4 rounded-t-3xl ">
-          <Text className="text-4xl text-center font-semibold pb-4">All set!</Text>
+          <Text className="text-4xl text-center font-semibold pb-4">
+            All set!
+          </Text>
           <Text className="text-lg text-center my-4 pb-10">
             We&#39;re ready to create your personalized profile. Our AI will
             analyze your data and generate a plan tailored just for you.
@@ -21,7 +23,7 @@ export default function LoginScreen() {
           <Button
             size={"lg"}
             className="rounded-full mt-4"
-            onPress={() => router.back()}
+            onPress={() => router.replace("/")}
           >
             <Text className="text-xl text-background">Continue</Text>
           </Button>
