@@ -56,6 +56,14 @@ export default function RootLayout() {
             headerBackButtonDisplayMode: "minimal",
           }}
         />
+        <Stack.Screen
+          name="all-set"
+          options={{
+            title: "Get Started",
+            headerShown: true,
+            headerBackButtonDisplayMode: "minimal",
+          }}
+        />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

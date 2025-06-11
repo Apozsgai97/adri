@@ -132,7 +132,7 @@ export default function FoodPreferencesScreen() {
           onPress={() => {
             // Handle form submission here
             console.log("Submitted preferences:", values);
-            router.back();
+            router.push("/all-set");
           }}
         >
           <Text className="text-xl text-background">Continue</Text>
