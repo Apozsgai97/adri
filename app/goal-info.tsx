@@ -1,52 +1,157 @@
 import { Button } from "@/components/Button";
-import { Input } from "@/components/Input";
+import { Checkbox } from "@/components/Checkbox";
 import { Label } from "@/components/Label";
+import { Textarea } from "@/components/Textarea";
 import { useRouter } from "expo-router";
+import { useState } from "react";
 import { Text, View } from "react-native";
 
 export default function GoalInfoScreen() {
   const router = useRouter();
+  const [loseWeight, setLoseWeight] = useState(false);
+  const [gainWeight, setGainWeight] = useState(false);
+  const [eatHealthy, setEatHealthy] = useState(false);
+  const [reduceSugar, setReduceSugar] = useState(false);
+  const [plantBasedMeals, setPlantBasedMeals] = useState(false);
+  const [saveTime, setSaveTime] = useState(false);
+  const [familyMeals, setFamilyMeals] = useState(false);
+  const [budgetMeals, setBudgetMeals] = useState(false);
+  const [eatingRoutine, setEatingRoutine] = useState(false);
 
   return (
     <View className="flex-1 bg-background px-4 py-10 justify-between">
-      <View >
-      <View className="gap-2 pb-4">
-        <Text className="text-3xl font-bold">Basic Information</Text>
-        <Text className="text-lg text-muted-foreground">This helps us create a personalized plan just for you</Text>
-      </View>
+      <View>
+        <View className="gap-2 pb-4">
+          <Text className="text-3xl font-bold">Your goals</Text>
+          <Text className="text-lg text-muted-foreground">
+            Tell us what you want to achieve with the help of this application.
+          </Text>
+        </View>
 
-      <View className="py-4 gap-4">
-        <View className="gap-2">
-          <Label nativeID="firstName">First name</Label>
-          <Input
-            placeholder="Enter your first name"
-            aria-labelledby="firstName"
-          />
+        <View className="py-4 gap-6">
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="loseWeight"
+              checked={loseWeight}
+              onCheckedChange={setLoseWeight}
+            />
+            <Label
+              nativeID="loseWeight"
+              onPress={() => setLoseWeight((prev) => !prev)}
+            >
+              Lose weight
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="gainWeight"
+              checked={gainWeight}
+              onCheckedChange={setGainWeight}
+            />
+            <Label
+              nativeID="gainWeight"
+              onPress={() => setGainWeight((prev) => !prev)}
+            >
+              Gain weight
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="reduceSugar"
+              checked={reduceSugar}
+              onCheckedChange={setReduceSugar}
+            />
+            <Label
+              nativeID="reduceSugar"
+              onPress={() => setReduceSugar((prev) => !prev)}
+            >
+              Reduce sugar intake
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={eatHealthy}
+              onCheckedChange={setEatHealthy}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setEatHealthy((prev) => !prev)}
+            >
+              Eat healthier
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={plantBasedMeals}
+              onCheckedChange={setPlantBasedMeals}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setPlantBasedMeals((prev) => !prev)}
+            >
+              Increase plant-based meals
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={saveTime}
+              onCheckedChange={setSaveTime}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setSaveTime((prev) => !prev)}
+            >
+              Save time on cooking
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={familyMeals}
+              onCheckedChange={setFamilyMeals}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setFamilyMeals((prev) => !prev)}
+            >
+              Plan meals for the whole family
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={budgetMeals}
+              onCheckedChange={setBudgetMeals}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setBudgetMeals((prev) => !prev)}
+            >
+              Eat well on a budget
+            </Label>
+          </View>
+          <View className="flex-row gap-3 items-center">
+            <Checkbox
+              aria-labelledby="eatHealthy"
+              checked={eatingRoutine}
+              onCheckedChange={setEatingRoutine}
+            />
+            <Label
+              nativeID="eatHealthy"
+              onPress={() => setEatingRoutine((prev) => !prev)}
+            >
+              Establish a consistent eating routine
+            </Label>
+          </View>
+
+          <View className="gap-2">
+            <Label nativeID="otherGoal">Other</Label>
+            <Textarea aria-labelledby="otherGoal" />
+          </View>
         </View>
-        <View className="gap-2">
-          <Label nativeID="lastName">Last name</Label>
-          <Input
-            placeholder="Enter your last name"
-            aria-labelledby="lastName"
-          />
-        </View>
-        <View className="gap-2">
-          <Label nativeID="weight">Weight (kg)</Label>
-          <Input
-            placeholder="80"
-            aria-labelledby="weight"
-            keyboardType="numeric"
-          />
-        </View>
-        <View className="gap-2">
-          <Label nativeID="height">Height (cm)</Label>
-          <Input placeholder="168" aria-labelledby="height" />
-        </View>
-        <View className="gap-2">
-          <Label nativeID="waist">Waist measurement (cm) optional</Label>
-          <Input placeholder="168" aria-labelledby="waist" />
-        </View>
-      </View>
       </View>
 
       <View>
