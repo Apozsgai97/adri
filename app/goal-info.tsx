@@ -82,7 +82,7 @@ export default function GoalInfoScreen() {
           onPress={() => {
             // Handle form submission here
             console.log({ goals, otherGoal });
-            router.back();
+            router.push("/food-preferences");
           }}
         >
           <Text className="text-xl text-background">Continue</Text>

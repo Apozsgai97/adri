@@ -48,6 +48,14 @@ export default function RootLayout() {
             headerBackButtonDisplayMode: "minimal",
           }}
         />
+        <Stack.Screen
+          name="food-preferences"
+          options={{
+            title: "Get Started",
+            headerShown: true,
+            headerBackButtonDisplayMode: "minimal",
+          }}
+        />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
