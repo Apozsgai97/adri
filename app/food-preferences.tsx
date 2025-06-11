@@ -11,42 +11,38 @@ export default function FoodPreferencesScreen() {
     <View className="flex-1 bg-background px-4 py-10 justify-between">
       <View>
         <View className="gap-2 pb-4">
-          <Text className="text-3xl font-bold">Basic Information</Text>
+          <Text className="text-3xl font-bold">Food Preferences</Text>
           <Text className="text-lg text-muted-foreground">
-            This helps us create a personalized plan just for you
+            This helps us create a personalized meal plan just for you
           </Text>
         </View>
 
         <View className="py-4 gap-4">
           <View className="gap-2">
-            <Label nativeID="firstName">First name</Label>
+            <Label nativeID="dietRestriction">Any diet restrictions?</Label>
             <Input
-              placeholder="Enter your first name"
-              aria-labelledby="firstName"
+              placeholder="vegetarian, vegan, gluten-free, etc."
+              aria-labelledby="dietRestriction"
             />
           </View>
           <View className="gap-2">
-            <Label nativeID="lastName">Last name</Label>
+            <Label nativeID="foodAllergies">Any food allergies?</Label>
             <Input
-              placeholder="Enter your last name"
-              aria-labelledby="lastName"
+              placeholder="peanuts, dairy, etc."
+              aria-labelledby="foodAllergies"
             />
           </View>
           <View className="gap-2">
-            <Label nativeID="weight">Weight (kg)</Label>
+            <Label nativeID="dislikedFood">Foods you dislike?</Label>
             <Input
-              placeholder="80"
-              aria-labelledby="weight"
-              keyboardType="numeric"
+              placeholder="broccoli, mushrooms, etc."
+              aria-labelledby="dislikedFood"
             />
           </View>
           <View className="gap-2">
-            <Label nativeID="height">Height (cm)</Label>
-            <Input placeholder="168" aria-labelledby="height" />
-          </View>
-          <View className="gap-2">
-            <Label nativeID="waist">Waist measurement (cm) optional</Label>
-            <Input placeholder="168" aria-labelledby="waist" />
+            <Label nativeID="favoriteFoods">Favorite foods?</Label>
+            <Input placeholder="bananas, pizza, etc."
+             aria-labelledby="favoriteFoods" />
           </View>
         </View>
       </View>
