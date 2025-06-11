@@ -26,8 +26,9 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen
-          name="(tabs)"
+          name="index"
           options={{
+            title: "Get Started",
             headerShown: false,
           }}
         />
@@ -62,6 +63,12 @@ export default function RootLayout() {
             title: "Get Started",
             headerShown: true,
             headerBackButtonDisplayMode: "minimal",
+          }}
+        />
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
           }}
         />
       </Stack>
