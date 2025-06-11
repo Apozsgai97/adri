@@ -9,31 +9,21 @@ export default function LoginScreen() {
     <ImageBackground
       source={require("@/assets/images/all-set.png")}
       className="flex-1"
-      imageStyle={{ bottom: 200 }}
+      imageStyle={{ bottom: 100 }}
     >
       <SafeAreaView className="flex-1 justify-end">
-        <View className="bg-background py-14 px-4 rounded-t-3xl shadow">
-          <Text className="text-4xl text-center font-semibold">
-            All set!
+        <View className="bg-background pt-20 px-4 rounded-t-3xl ">
+          <Text className="text-4xl text-center font-semibold pb-4">All set!</Text>
+          <Text className="text-lg text-center my-4 pb-10">
+            We&#39;re ready to create your personalized profile. Our AI will
+            analyze your data and generate a plan tailored just for you.
           </Text>
-          <Text className="text-lg text-center my-4">
-            Discover a world of delicious recipes, personalized meal plans, and
-            nutritional insights. Join us in transforming your cooking
-            experience! 
-          </Text>
-          <Button
-            className="rounded-full mt-4 border-primary"
-            size={"lg"}
-            variant={"outline"}
-          >
-            <Text className="text-xl text-primary">Log in</Text>
-          </Button>
           <Button
             size={"lg"}
             className="rounded-full mt-4"
-            onPress={() => router.push("/basic-info")}
+            onPress={() => router.back()}
           >
-            <Text className="text-xl text-background">Get started</Text>
+            <Text className="text-xl text-background">Continue</Text>
           </Button>
         </View>
       </SafeAreaView>
