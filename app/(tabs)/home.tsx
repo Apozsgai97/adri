@@ -12,7 +12,7 @@ export default function HomeScreen() {
         contentContainerStyle={{
           paddingBottom: 40,
         }}
-        className=" bg-orange-100"
+        
       >
         <WelcomeCard />
         <Separator />

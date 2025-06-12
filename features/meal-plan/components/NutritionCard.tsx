@@ -9,7 +9,7 @@ import { Text, View } from "react-native";
 
 export function NutritionCard() {
   return (
-    <Card className="border-1 shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+    <Card className="border-2 shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
       <CardHeader className="flex-row justify-between items-center">
         <CardTitle className="text-md">Daily Nutrition</CardTitle>
         <CardDescription>Last updated: 2023-10-01</CardDescription>
