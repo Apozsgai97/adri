@@ -19,11 +19,15 @@ const goalsList = [
 
 export default function GoalInfoScreen() {
   const router = useRouter();
-  const [goals, setGoals] = useState<Record<string, boolean>>({});
+  const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
   const [otherGoal, setOtherGoal] = useState("");
 
-  const toggleGoal = (key: string) => {
-    setGoals((prev) => ({ ...prev, [key]: !prev[key] }));
+  const toggleGoal = ( label: string) => {
+    setSelectedGoals((prev) =>
+      prev.includes(label)
+        ? prev.filter((goal) => goal !== label)
+        : [...prev, label]
+    );
   };
 
   return (
@@ -38,24 +42,22 @@ export default function GoalInfoScreen() {
 
         <View className="py-4 gap-4">
           {goalsList.map(({ key, label }) => {
-            const isChecked = goals[key] ?? false;
+            const isChecked = selectedGoals.includes(label);
             return (
               <View
                 key={key}
                 className={`flex-row items-center px-4 py-2 rounded-lg border ${
-                  isChecked
-                    ? "border-primary bg-orange-50"
-                    : "border-gray-200"
+                  isChecked ? "border-primary bg-orange-50" : "border-gray-200"
                 }`}
               >
                 <Checkbox
                   aria-labelledby={key}
                   checked={isChecked}
-                  onCheckedChange={() => toggleGoal(key)}
+                  onCheckedChange={() => toggleGoal(label)}
                 />
                 <Label
                   nativeID={key}
-                  onPress={() => toggleGoal(key)}
+                  onPress={() => toggleGoal(label)}
                   className="ml-3"
                 >
                   {label}
@@ -80,8 +82,11 @@ export default function GoalInfoScreen() {
           size={"lg"}
           className="rounded-full"
           onPress={() => {
-            // Handle form submission here
-            console.log({ goals, otherGoal });
+            const allSelectedGoals = [...selectedGoals];
+            if (otherGoal.trim()) {
+              allSelectedGoals.push(otherGoal.trim());
+            }
+            console.log(allSelectedGoals);
             router.push("/food-preferences");
           }}
         >
