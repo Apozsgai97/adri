@@ -12,14 +12,14 @@ export default function HomeScreen() {
         contentContainerStyle={{
           paddingBottom: 40,
         }}
-        
+      className="bg-slate-50"
       >
         <WelcomeCard />
         <Separator />
         <View className="m-6 gap-4">
-          <Text className="text-lg font-bold">Your Meal Plan</Text>
+          <Text className="text-xl font-bold">Your Meal Plan</Text>
           <NutritionCard />
-          <Text className="text-lg font-bold">{"Today's Meals"}</Text>
+          <Text className="text-xl font-bold">{"Today's Meals"}</Text>
           <View className="flex-row flex-wrap justify-between">
             <MealCard />
             <MealCard />

@@ -9,14 +9,14 @@ import { Text, View } from "react-native";
 
 export function NutritionCard() {
   return (
-    <Card className="border-2 shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+    <Card className="border-1 shadow-[0_2px_4px_rgba(0,0,0,0.1)] rounded-3xl">
       <CardHeader className="flex-row justify-between items-center">
         <CardTitle className="text-md">Daily Nutrition</CardTitle>
         <CardDescription>Last updated: 2023-10-01</CardDescription>
       </CardHeader>
       <CardContent className="gap-4">
         <View className="flex-row gap-4 justify-between">
-          <Card className="flex-grow items-center border-0 shadow-none bg-blue-100 ">
+          <Card className="flex-grow items-center border-0 shadow-none bg-blue-100">
             <CardHeader className="p-2">
               <CardTitle className="text-sm font-normal text-blue-700">
                 Protein
