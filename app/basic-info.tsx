@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Label } from "@/components/Label";
+import { mealPlanService } from "@/features/meal-plan/instance";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
@@ -89,6 +90,7 @@ export default function BasicInfoScreen() {
               waist: waist.trim() ? parseFloat(waist) : null,
             };
             console.log(basicInfo);
+            mealPlanService.setData({firstName: basicInfo.firstName, lastName: basicInfo.lastName, weight: basicInfo.weight, height: basicInfo.height, waist: basicInfo.waist});
             router.push("/goal-info");
           }}
         >

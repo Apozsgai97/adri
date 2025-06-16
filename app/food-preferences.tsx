@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Label } from "@/components/Label";
+import { mealPlanService } from "@/features/meal-plan/instance";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -132,6 +133,7 @@ export default function FoodPreferencesScreen() {
           onPress={() => {
             // Handle form submission here
             console.log("Submitted preferences:", values);
+            mealPlanService.setData({dietRestrictions: values.dietRestrictions, foodAllergies: values.foodAllergies, dislikedFoods: values.dislikedFoods, favoriteFoods: values.favoriteFoods});
             router.push("/all-set");
           }}
         >

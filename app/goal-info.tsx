@@ -2,6 +2,7 @@ import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
 import { Label } from "@/components/Label";
 import { Textarea } from "@/components/Textarea";
+import { mealPlanService } from "@/features/meal-plan/instance";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
@@ -87,6 +88,7 @@ export default function GoalInfoScreen() {
               allSelectedGoals.push(otherGoal.trim());
             }
             console.log(allSelectedGoals);
+            mealPlanService.setData({goals: allSelectedGoals});
             router.push("/food-preferences");
           }}
         >
