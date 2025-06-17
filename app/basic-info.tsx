@@ -90,7 +90,7 @@ export default function BasicInfoScreen() {
               waist: waist.trim() ? parseFloat(waist) : null,
             };
             console.log(basicInfo);
-            mealPlanService.setData({firstName: basicInfo.firstName, lastName: basicInfo.lastName, weight: basicInfo.weight, height: basicInfo.height, waist: basicInfo.waist});
+            mealPlanService.setPersonalFormData({firstName: basicInfo.firstName, lastName: basicInfo.lastName, weight: basicInfo.weight, height: basicInfo.height, waist: basicInfo.waist});
             router.push("/goal-info");
           }}
         >

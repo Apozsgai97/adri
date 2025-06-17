@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { mealPlanService } from "@/features/meal-plan/instance";
 import { useRouter } from "expo-router";
 import { ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -23,7 +24,10 @@ export default function LoginScreen() {
           <Button
             size={"lg"}
             className="rounded-full mt-4"
-            onPress={() => router.replace("/home")}
+            onPress={() => {
+            mealPlanService.addPersonalInfo();
+            router.replace("/home")}}
+              
           >
             <Text className="text-xl text-background">Continue</Text>
           </Button>
