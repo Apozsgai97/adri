@@ -24,10 +24,10 @@ export default function LoginScreen() {
           <Button
             size={"lg"}
             className="rounded-full mt-4"
-            onPress={() => {
-            mealPlanService.addPersonalInfo();
-            router.replace("/home")}}
-              
+            onPress={async () => {
+              const id = await mealPlanService.addPersonalInfo();
+              router.replace({ pathname: "/home", params: { userId: id.toString() }});
+            }}
           >
             <Text className="text-xl text-background">Continue</Text>
           </Button>

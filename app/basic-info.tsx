@@ -89,7 +89,6 @@ export default function BasicInfoScreen() {
               height: height.trim() ? parseFloat(height) : null,
               waist: waist.trim() ? parseFloat(waist) : null,
             };
-            console.log(basicInfo);
             mealPlanService.setPersonalFormData({firstName: basicInfo.firstName, lastName: basicInfo.lastName, weight: basicInfo.weight, height: basicInfo.height, waist: basicInfo.waist});
             router.push("/goal-info");
           }}

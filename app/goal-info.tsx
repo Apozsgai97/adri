@@ -87,7 +87,6 @@ export default function GoalInfoScreen() {
             if (otherGoal.trim()) {
               allSelectedGoals.push(otherGoal.trim());
             }
-            console.log(allSelectedGoals);
             mealPlanService.setPersonalFormData({goals: allSelectedGoals});
             router.push("/food-preferences");
           }}

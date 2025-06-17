@@ -7,12 +7,29 @@ import {
 } from "@/components/Card";
 import { Text, View } from "react-native";
 
+import { useLocalSearchParams } from "expo-router";
+import { useEffect, useState } from "react";
+import { mealPlanService } from "../instance";
+
 export function WelcomeCard() {
+  const [userName, setUserName] = useState("User");
+  const { userId } = useLocalSearchParams();
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      if (!userId) return;
+      const user = await mealPlanService.getUserById(userId as string);
+      console.log("Fetched user:", user);
+      setUserName(user?.first_name || "User");
+    };
+    fetchUserName();
+  }, [userId]);
+
   return (
     <Card className="border-0 shadow-none">
       <CardHeader>
         <View className="flex-row justify-between items-center">
-          <CardTitle accessibilityRole="header">Hi, Carol!</CardTitle>
+          <CardTitle accessibilityRole="header">{userName}</CardTitle>
           <Avatar alt="Carol's Avatar">
             <AvatarImage
               source={{

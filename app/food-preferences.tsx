@@ -132,7 +132,6 @@ export default function FoodPreferencesScreen() {
           className="rounded-full"
           onPress={() => {
             // Handle form submission here
-            console.log("Submitted preferences:", values);
             mealPlanService.setPersonalFormData({dietRestrictions: values.dietRestrictions, foodAllergies: values.foodAllergies, dislikedFoods: values.dislikedFoods, favoriteFoods: values.favoriteFoods});
             router.push("/all-set");
           }}
