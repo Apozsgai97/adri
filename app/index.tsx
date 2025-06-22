@@ -31,7 +31,7 @@ export default function LoginScreen() {
           <Button
             size={"lg"}
             className="rounded-full mt-4"
-            onPress={() => router.push("/signup")}
+            onPress={() => router.push("./auth/signup")}
           >
             <Text className="text-xl text-background">Get started</Text>
           </Button>

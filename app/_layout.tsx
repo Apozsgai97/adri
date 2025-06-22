@@ -10,7 +10,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import "../global.css";
-import { SessionProvider } from "./ctx";
+import { SessionProvider } from "../ctx";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -36,7 +36,7 @@ export default function RootLayout() {
           />
           <Stack.Screen name="+not-found" />
           <Stack.Screen
-            name="basic-info"
+            name="(app)/basic-info"
             options={{
               title: "Get Started",
               headerShown: true,
@@ -44,7 +44,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="goal-info"
+            name="(app)/goal-info"
             options={{
               title: "Get Started",
               headerShown: true,
@@ -52,7 +52,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="food-preferences"
+            name="(app)/food-preferences"
             options={{
               title: "Get Started",
               headerShown: true,
@@ -60,7 +60,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="all-set"
+            name="(app)/all-set"
             options={{
               title: "Get Started",
               headerShown: true,
@@ -68,13 +68,13 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="(tabs)"
+            name="(app)/(tabs)"
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name="(auth)"
+            name="auth"
             options={{
               headerShown: false,
             }}
