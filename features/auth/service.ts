@@ -8,5 +8,11 @@ export function createAuthService(repository: AuthRepository) {
     async signIn(email: string, password: string) {
       await repository.signIn(email, password);
     },
+    async getSession() {
+      return await repository.getSession();
+    },
+    async signOut() {
+      await repository.signOut();
+    },
   };
 }
