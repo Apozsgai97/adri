@@ -14,5 +14,9 @@ export function createAuthRepository(Db: SupabaseClient) {
       console.log("Sign up successful:", data);
       return data;
     },
+
+    async signIn(email: string, password: string) {},
   };
 }
+
+export type AuthRepository = ReturnType<typeof createAuthRepository>;

@@ -6,7 +6,7 @@ import { Text, View } from "react-native";
 import { authService } from "../instance";
 import { router } from "expo-router";
 
-export function SignUpScreen() {
+export function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (

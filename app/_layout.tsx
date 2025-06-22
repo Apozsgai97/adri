@@ -32,13 +32,6 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="signUp"
-          options={{
-            title: "Sign Up",
-            headerShown: false,
-          }}
-        />
         <Stack.Screen name="+not-found" />
         <Stack.Screen
           name="basic-info"
@@ -74,6 +67,12 @@ export default function RootLayout() {
         />
         <Stack.Screen
           name="(tabs)"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="(auth)"
           options={{
             headerShown: false,
           }}
