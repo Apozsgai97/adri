@@ -1,9 +1,10 @@
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Label } from "@/components/Label";
+import { useSession } from "@/features/auth/ctx";
 import { mealPlanService } from "@/features/meal-plan/instance";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 
 export default function BasicInfoScreen() {
@@ -13,6 +14,12 @@ export default function BasicInfoScreen() {
   const [height, setHeight] = useState("");
   const [waist, setWaist] = useState("");
   const router = useRouter();
+
+      const {session} = useSession();
+      useEffect(() => {
+        console.log("Session:", session);
+      }, [session]);
+  
 
   return (
     <View className="flex-1 bg-background px-4 py-10 justify-between">

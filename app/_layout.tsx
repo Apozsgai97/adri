@@ -10,7 +10,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import "../global.css";
-import { SessionProvider } from "../ctx";
+import { SessionProvider } from "../features/auth/ctx";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -79,6 +79,22 @@ export default function RootLayout() {
               headerShown: false,
             }}
           />
+              <Stack.Screen
+        name="auth/signup"
+        options={{
+          title: "Sign Up",
+          headerShown: true,
+          headerBackButtonDisplayMode: "minimal",
+        }}
+      />
+      <Stack.Screen
+        name="auth/login"
+        options={{
+          title: "Log In",
+          headerShown: true,
+          headerBackButtonDisplayMode: "minimal",
+        }}
+      />
         </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>

@@ -6,7 +6,10 @@ export function createAuthService(repository: AuthRepository) {
       await repository.signUp(email, password);
     },
     async signIn(email: string, password: string) {
-      await repository.signIn(email, password);
+      const { user } = await repository.signIn(email, password);
+      if (user) {
+        console.log("User signed in:", user);
+      }
     },
     async getSession() {
       return await repository.getSession();

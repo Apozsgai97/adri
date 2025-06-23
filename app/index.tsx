@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -25,6 +25,7 @@ export default function LoginScreen() {
             className="rounded-full mt-4 border-primary"
             size={"lg"}
             variant={"outline"}
+            onPress={() => router.push("./auth/login")}
           >
             <Text className="text-xl text-primary">Log in</Text>
           </Button>
