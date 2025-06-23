@@ -1,8 +1,9 @@
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Label } from "@/components/Label";
+import { Loading } from "@/components/ui/Loading";
 import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Text, View } from "react-native";
 import { useSession } from "../ctx";
 import { authService } from "../instance";
@@ -10,10 +11,7 @@ import { authService } from "../instance";
 export function SignUpScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {session} = useSession();
-  useEffect(() => {
-    console.log("Session:", session);
-  }, [session]);
+
   return (
     <View className="flex-1 bg-background px-4 py-10 justify-between">
       <View className="gap-4">
